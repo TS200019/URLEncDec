@@ -1,0 +1,2 @@
+# URLEncDec
+Teradata VantageでURLエンコードするための関数作成プロジェクト
