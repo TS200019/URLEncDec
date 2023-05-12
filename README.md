@@ -36,21 +36,21 @@ CALL SQLJ.INSTALL_JAR('CJ!C:/temp/URLEncDec.jar', 'URLEncDec', 0);
 
 ## (7)UDF関数を定義する
 
-replace FUNCTION URLEnc(p1 varchar(1024) Character set unicode ,p2 varchar(64) Character set unicode)
-RETURNS varchar(1024) character set unicode
-LANGUAGE JAVA
-NO SQL
-PARAMETER STYLE JAVA
-RETURNS NULL ON NULL INPUT
-EXTERNAL NAME 'URLEncDec:com.teradata.URLEncDec.enc(java.lang.String,java.lang.String) returns java.lang.String';
+	replace FUNCTION URLEnc(p1 varchar(1024) Character set unicode ,p2 varchar(64) Character set unicode)
+	RETURNS varchar(1024) character set unicode
+	LANGUAGE JAVA
+	NO SQL
+	PARAMETER STYLE JAVA
+	RETURNS NULL ON NULL INPUT
+	EXTERNAL NAME 'URLEncDec:com.teradata.URLEncDec.enc(java.lang.String,java.lang.String) returns java.lang.String';
 
-replace FUNCTION URLDec(p1 varchar(1024) character set unicode ,p2 varchar(64) Character set unicode)
-RETURNS varchar(1024) character set unicode
-LANGUAGE JAVA
-NO SQL
-PARAMETER STYLE JAVA
-RETURNS NULL ON NULL INPUT
-EXTERNAL NAME 'URLEncDec:com.teradata.URLEncDec.dec(java.lang.String,java.lang.String) returns java.lang.String';
+	replace FUNCTION URLDec(p1 varchar(1024) character set unicode ,p2 varchar(64) Character set unicode)
+	RETURNS varchar(1024) character set unicode
+	LANGUAGE JAVA
+	NO SQL
+	PARAMETER STYLE JAVA
+	RETURNS NULL ON NULL INPUT
+	EXTERNAL NAME 'URLEncDec:com.teradata.URLEncDec.dec(java.lang.String,java.lang.String) returns java.lang.String';
 
 ## (8)UDF関数の実行方法。
 ### (8.1)URLエンコードします
