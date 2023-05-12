@@ -17,22 +17,22 @@ Javaソースプログラムをコンパイルして任意のフォルダにjar�
 
 ## (2)Teradataのdbcにログインします
 
-.logon dbc,{パスワード}
+	.logon dbc,{パスワード}
 
 ## (3)UDF権限を付与
-GRANT EXECUTE PROCEDURE ON sqlj to {ターゲットユーザ};
-GRANT FUNCTION  ON {ターゲットユーザ} TO {ターゲットユーザ};
+	GRANT EXECUTE PROCEDURE ON sqlj to {ターゲットユーザ};
+	GRANT FUNCTION  ON {ターゲットユーザ} TO {ターゲットユーザ};
 
 ## (4)TeradataのUDFを実行するユーザにログインします
 
-.logon {ターゲットユーザ},{パスワード}
+	.logon {ターゲットユーザ},{パスワード}
 
 ## (5)JarfileをDBからリムーブする。(6)未実施の場合はスキップしてください。
-CALL SQLJ.REMOVE_JAR('URLEncDec', 0); 
+	CALL SQLJ.REMOVE_JAR('URLEncDec', 0); 
 
 ## (6)JarfileをDBにインポートする
 
-CALL SQLJ.INSTALL_JAR('CJ!C:/temp/URLEncDec.jar', 'URLEncDec', 0); 
+	CALL SQLJ.INSTALL_JAR('CJ!C:/temp/URLEncDec.jar', 'URLEncDec', 0); 
 
 ## (7)UDF関数を定義する
 
