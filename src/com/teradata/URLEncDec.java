@@ -14,18 +14,22 @@ public class URLEncDec {
 			ret = URLEncoder.encode(p1,p2);
 		} catch( UnsupportedEncodingException e ) {
 			ret = "UTF-16 encoding string is supported";
+		} catch ( Exception e) {
+			ret = p1;			
 		}
 		return ret;
 	} 	
 	/*
 	 * URL Decoder 
 	 */
-	public static String dec(String p1 ,String p2) throws SQLException{
+	public static String dec(String p1 ,String p2) throws SQLException {
 		String ret = "";
 		try {
 			ret = URLDecoder.decode(p1,p2);
 		} catch( UnsupportedEncodingException e ) {
 			ret = "UTF-16 encoding string is supported";
+		} catch ( Exception e) {
+			ret = p1;			
 		}
 		return ret;
 	} 
